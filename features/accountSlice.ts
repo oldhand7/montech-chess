@@ -27,7 +27,7 @@ const connectWallet = (provider: any) => {
     }
   });
 };
-// let ethereum: any;
+let ethereum: any;
 export const connectAccount: any = createAsyncThunk(
   "accounts/connect",
   async (walletType: any, { dispatch, getState }: any) => {
@@ -37,7 +37,7 @@ export const connectAccount: any = createAsyncThunk(
     const providerForWalletType: any = async (walletType: any) => {
       switch (walletType) {
         case "metamask":
-          // ethereum = window.ethereum;
+          ethereum = window.ethereum;
           return window.ethereum;
         // case "walletconnect":
         //   const { default: WalletConnectProvider } = await import(
