@@ -33,6 +33,8 @@ export const connectAccount: any = createAsyncThunk(
     const { infuraId, chainId, networkName, usdtContractAddress } =
       getState().config;
 
+    let ethereum:any;
+
     const providerForWalletType: any = async (walletType: any) => {
       switch (walletType) {
         case "metamask":
