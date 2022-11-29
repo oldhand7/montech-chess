@@ -31,10 +31,7 @@ export const connectAccount: any = createAsyncThunk(
   "accounts/connect",
   async (walletType: any, { dispatch, getState }: any) => {
     const { infuraId, chainId, networkName, usdtContractAddress } =
-      getState().config;
-
-    let ethereum:any;
-    
+      getState().config;   
 
     const providerForWalletType: any = async (walletType: any) => {
       switch (walletType) {
@@ -74,10 +71,11 @@ export const connectAccount: any = createAsyncThunk(
         connected({ address, networkId, provider, balance, usdtBalance })
       );
     });
+    // @ts-ignore
     ethereum.on("accountsChanged", (accounts: any) => {
       dispatch(updated({ address: accounts[0] }));
     });
-
+    // @ts-ignore
     ethereum.on("chainChanged", () => {
       window.location.reload();
     });
