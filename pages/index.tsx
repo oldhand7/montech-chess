@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import coinbase from "../public/assets/coinbase.png";
 import metamask from "../public/assets/metamask.png";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connectAccount } from "../features/accountSlice";
 import { loadConfig } from "../features/configSlice";
@@ -17,24 +17,14 @@ const Home: NextPage = () => {
 
   function onWalletListItemClick(walletType: any) {
     return ({ target }: any) => {
-      if (!account.connected) {
-        dispatch(connectAccount(walletType));
-      } else {
-        alert("Disconnet from connected wallet");
-      }
-      // if (account.connected) {
+      dispatch(connectAccount(walletType));
       router.push("/games");
-      // }
       target.parentElement.parentElement.removeAttribute("open");
     };
   }
   useEffect(() => {
     dispatch(loadConfig());
-    // if (account) {
-    //   router.push("/games");
-    // }
   }, [dispatch, config, account]);
-  console.log(config);
   return (
     <>
       <Head>
@@ -42,7 +32,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="sm:mt-16 mt-10 relative flex min-h-screen flex-col items-center justify-start py-2">
-        {/* <Navbar /> */}
         <h1 className="lg:text-5xl md:text-4xl  sm:text-2xl font-bold">
           Welcome to Chess Games
         </h1>
@@ -52,7 +41,6 @@ const Home: NextPage = () => {
         <div className="sm:mt-16  mt-10 flex flex-col">
           <button
             onClick={onWalletListItemClick("metamask")}
-            // href="/games"
             style={{
               backgroundColor: "#438FFE",
               borderRadius: "30px",

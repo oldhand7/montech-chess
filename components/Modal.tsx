@@ -1,22 +1,8 @@
 import Link from "next/link";
-import { useState } from "react";
 
-const Modal = ({ openTab, showModal, setShowModal }: any) => {
-  // const [showModal, setShowModal] = useState(false);
-
+const Modal = ({ showModal, setShowModal }: any) => {
   return (
     <>
-      {/* <div className="flex items-center justify-center "> */}
-      {/* <button
-        disabled={openTab === 2}
-        style={{ backgroundColor: openTab === 2 ? "#BFBFBF" : "#438FFE" }}
-        className="text-xs font-semibold xl:w-32 lg:w-28 md:w-20 sm:w-20 w-20 rounded-lg text-white h-10"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Open Modal
-      </button> */}
-      {/* </div> */}
       {showModal ? (
         <>
           <div className="backdrop-blur-sm fixed inset-0 z-10 overflow-y-auto">
@@ -27,7 +13,6 @@ const Modal = ({ openTab, showModal, setShowModal }: any) => {
             <div className=" flex items-center justify-between min-h-screen px-10 py-8">
               <div
                 style={{
-                  // width: "495px",
                   boxSizing: "border-box",
                   height: "365px",
                 }}
@@ -45,7 +30,6 @@ const Modal = ({ openTab, showModal, setShowModal }: any) => {
                     <select
                       className=" w-full border-2 rounded-md h-10 px-4 py-1 mt-2"
                       name="currency"
-                      // style={{ width: "438px" }}
                       id="currency"
                     >
                       <option value="volvo">0.003 ETH</option>
@@ -61,7 +45,6 @@ const Modal = ({ openTab, showModal, setShowModal }: any) => {
                     <select
                       className=" w-full border-2 rounded-md h-10 px-4 py-1 mt-2"
                       name="currency"
-                      // style={{ width: "438px" }}
                       id="currency"
                     >
                       <option value="volvo">Public</option>

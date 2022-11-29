@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const pathname = router.pathname;
 
-  // console.log(pathname);
   return (
     <Provider store={store}>
       <div

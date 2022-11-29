@@ -27,7 +27,6 @@ const connectWallet = (provider: any) => {
     }
   });
 };
-let ethereum: any;
 export const connectAccount: any = createAsyncThunk(
   "accounts/connect",
   async (walletType: any, { dispatch, getState }: any) => {
@@ -37,20 +36,8 @@ export const connectAccount: any = createAsyncThunk(
     const providerForWalletType: any = async (walletType: any) => {
       switch (walletType) {
         case "metamask":
-          ethereum = window.ethereum;
           return window.ethereum;
-        // case "walletconnect":
-        //   const { default: WalletConnectProvider } = await import(
-        //     "@walletconnect/web3-provider"
-        //   );
 
-        //   const walletConnectProvider = new WalletConnectProvider({
-        //     infuraId: infuraId,
-        //     chainId: chainId,
-        //   });
-
-        //   await walletConnectProvider.enable();
-        //   return walletConnectProvider;
         case "coinbase":
           const { default: WalletLink } = await import("walletlink");
           const walletLink = new WalletLink({
@@ -78,7 +65,6 @@ export const connectAccount: any = createAsyncThunk(
       const contract = new ethers.Contract(usdtContractAddress, [
         "function balanceOf(address owner) view returns (uint balance)",
       ]).connect(signer);
-      // await contract.deployTransaction.wait();
       const usdtBalance = await contract.balanceOf(address);
 
       dispatch(

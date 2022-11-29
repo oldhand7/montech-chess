@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Dayjs } from "dayjs";
-import Box from "@mui/material/Box";
 import { IoIosArrowDown } from "react-icons/io";
 import { TbCalendar } from "react-icons/tb";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -46,6 +45,3 @@ export default function CustomDateRangeInputs() {
     </LocalizationProvider>
   );
 }
-
-// const newLife = 0;
-// export default newLife;

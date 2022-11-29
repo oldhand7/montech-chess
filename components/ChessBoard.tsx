@@ -63,7 +63,6 @@ const ChessBoard = () => {
     const width = window.innerWidth;
     setWidth(width);
   }, []);
-  console.log(width);
   return (
     <div className="chess-room">
       <div className="flex items-center justify-between mb-6">
@@ -71,7 +70,6 @@ const ChessBoard = () => {
         <Timer />
       </div>
 
-      {/* <Chessboard position={game.fen()} onPieceDrop={onDrop} /> */}
       <Chessboard
         boardWidth={
           width > 990 ? 600 : width > 768 ? 400 : width > 576 ? 300 : 200
