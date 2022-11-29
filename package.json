@@ -8,8 +8,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@material-ui/icons": "^4.11.3",
-    "@material-ui/styles": "^4.11.5",
     "@mui/material": "^5.10.15",
     "@mui/x-date-pickers": "^5.0.9",
     "@mui/x-date-pickers-pro": "^5.0.9",
