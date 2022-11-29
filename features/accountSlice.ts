@@ -34,6 +34,7 @@ export const connectAccount: any = createAsyncThunk(
       getState().config;
 
     let ethereum:any;
+    
 
     const providerForWalletType: any = async (walletType: any) => {
       switch (walletType) {
